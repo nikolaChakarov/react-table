@@ -17,23 +17,47 @@ const Navigation = () => {
     
     return <NavigationWrapper>
         
-        <Link to='/'>Home</Link>
+        <div className="menu-wrapper">
+            <Link to='/'>Home</Link>
+            
+            {user.value ? <>
+                <Link to='/table'>Table</Link>
+                <Link onClick={handleLogout}>Logout</Link>
+            </> : <>
+                <Link to='/login'>Login</Link>
+                <Link to='/register'>Register</Link>
+            
+            </>}
+        </div>
         
-        {user.value ? <>
-            <Link to='/table'>Table</Link>
-            <Link onClick={handleLogout}>Logout</Link>
-        </> : <>
-            <Link to='/login'>Login</Link>
-            <Link to='/register'>Register</Link>
-        
-        </>}
-        
+       <div className="components-wrapper">
         <Outlet />
+       </div>
         
     </NavigationWrapper>
     
 }
 
-const NavigationWrapper = styled.div``;
+const NavigationWrapper = styled.div`
+    .menu-wrapper {
+        padding: 10px;
+        display: flex;
+        gap: 10px;
+    }
+
+   @media (max-width: 576px) {
+    border: 2px dashed red;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: scroll;
+    
+    .components-wrapper {
+        border: 3px dashed darkolivegreen;
+        overflow: scroll;
+        padding: 10px;
+    }
+   }
+`;
 
 export default Navigation;

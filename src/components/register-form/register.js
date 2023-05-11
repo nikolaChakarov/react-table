@@ -11,6 +11,10 @@ const RegisterForm = () => {
         username: '',
         password: '', 
         password2: '',
+        gender: '',
+        skills: [],
+        country: '',
+        coments: ''
     }
     
     const navigate = useNavigate();
@@ -47,7 +51,7 @@ const RegisterForm = () => {
         navigate('/');
     }
     
-    const { values, errors, blured, submitting, setSubmitting, handleChange, handleBlured, handleSubmit } = useForm({ init, validation, onSubmit });
+    const { values, errors, blured, submitting, setSubmitting, handleChange, handleCheckboxChange, handleBlured, handleSubmit } = useForm({ init, validation, onSubmit });
     
     return <RegisterFormWrapper>
         <h3>Register</h3>
@@ -85,6 +89,31 @@ const RegisterForm = () => {
                 />
             </label>
             {errors.password2 && blured.password2 && <Error message={errors.password2}/>}
+            
+            <label htmlFor="gender">
+                <span>man</span>
+                <input type="radio" name="gender" value='man' checked={values.gender === 'man'} onChange={handleChange}/>
+                
+                <span>woman</span>
+                <input type="radio" name="gender" value='woman' checked={values.gender === 'woman'} onChange={handleChange}/>
+            </label>
+            
+            <div className="skills">
+                <label htmlFor="javascript">
+                    <span>JavaScript</span>
+                    <input type="checkbox" name="javascript" value='javascript' onChange={(e) => handleCheckboxChange(e, {field: 'skills'})}/>
+                </label>
+                
+                <label htmlFor="javascript">
+                    <span>React</span>
+                    <input type="checkbox" name="react" value='react' onChange={(e) => handleCheckboxChange(e, {field: 'skills'})}/>
+                </label>
+                
+                <label htmlFor="javascript">
+                    <span>Lwc</span>
+                    <input type="checkbox" name="lwc" value='lwc' onChange={(e) => handleCheckboxChange(e, {field: 'skills'})}/>
+                </label>
+            </div>
             
             <div className="btn-wrapper">
                 <button disabled={submitting} onClick={handleSubmit}>Register</button>

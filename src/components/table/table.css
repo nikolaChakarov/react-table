@@ -1,7 +1,7 @@
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  /* width: 100%; */
+  width: 100%;
 }
 
 td, th {
@@ -16,15 +16,9 @@ tr:nth-child(even) {
 
 /* ------------------- */
 
-@media (max-width: 375px) {
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
-  }
-  
+@media (max-width: 576px) { 
   .inner {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -33,9 +27,13 @@ tr:nth-child(even) {
   
   table {
     display: flex;
+    /* flex-grow: 1; */
+    /* flex: 1; */
     flex-direction: column;
     overflow: scroll;
     height: 100vh;
+    border: 2px dashed gold;
+    width: initial;
   }
   
   .t-head {

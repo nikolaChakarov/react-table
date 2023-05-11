@@ -35,8 +35,8 @@ const LoginForm = () => {
         
         // dispatch(login(values));
         setTimeout(() => setSubmitting(false), 1000);
-        // setTimeout(() => navigate('/table'), 2500);
         setTimeout(() => dispatch(login(values)), 2500);
+        setTimeout(() => navigate('/table'), 2500);
         
     }
     

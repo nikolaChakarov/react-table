@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import styled from 'styled-components';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -13,8 +13,7 @@ import Authorized from './components/protected/authorized';
 
 
 const App = () => {
-  return <div className='main'>
-        
+  return <AppWrapper className='main'>
         <Routes>
             <Route path='/' element={<Navigation />}>
                 <Route index element={<Home />}/>
@@ -24,7 +23,16 @@ const App = () => {
             </Route>
         </Routes>
       
-  </div>
+  </AppWrapper>
 }
+
+const AppWrapper = styled.div`
+  /* border: 3px dashed green;
+  overflow: scroll;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; */
+  
+`
 
 export default App;

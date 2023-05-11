@@ -22,6 +22,15 @@ const useForm = (props) => {
         }))
     }
     
+    const handleCheckboxChange = (e, props) => {
+        const { field } = props;
+        
+        setValues(prev => {
+            const fields = prev[field];
+            
+        })
+    }
+    
     const handleBlured = (e) => {
         setBlured(prev => ({
             ...prev,
@@ -48,7 +57,7 @@ const useForm = (props) => {
         setErrors(validation(values));
     }, [ values ])
     
-    return { values, errors, blured, submitting, setSubmitting, handleChange, handleBlured, handleSubmit };
+    return { values, errors, blured, submitting, setSubmitting, handleChange, handleCheckboxChange, handleBlured, handleSubmit };
 };
 
 export default useForm;

@@ -17,8 +17,7 @@ const BasicTable = () => {
     
     console.log('tableInstance:::', tableInstance );
     
-    return <div className="wrapper">
-                <div className="inner">
+    return  <div className="inner">
                     <table {...getTableProps()  }>
                         <thead className='t-head'>
                                 {
@@ -51,7 +50,6 @@ const BasicTable = () => {
                         </tbody>
                     </table>
                 </div>
-            </div>
 };
 
 export default BasicTable;

@@ -39,6 +39,17 @@ const Navigation = () => {
 }
 
 const NavigationWrapper = styled.div`
+    border: 2px dashed red;
+    display: flex;
+    flex-direction: column;
+    
+    height: 100vh;
+    overflow: scroll;
+    
+    .components-wrapper {
+        overflow: scroll;
+    }
+    
     .menu-wrapper {
         padding: 10px;
         display: flex;
@@ -46,15 +57,8 @@ const NavigationWrapper = styled.div`
     }
 
    @media (max-width: 576px) {
-    border: 2px dashed red;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: scroll;
-    
     .components-wrapper {
         border: 3px dashed darkolivegreen;
-        overflow: scroll;
         padding: 10px;
     }
    }
